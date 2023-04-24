@@ -26,6 +26,7 @@ class Artwork extends StatelessWidget {
         body: Column(children: [
           Center(
               child: Stack(
+            alignment: Alignment.center,
             children: [
               Image.asset("assets/images/Mona_Lisa.jpg"),
               const Icon(Icons.favorite,
@@ -44,6 +45,10 @@ class Artwork extends StatelessWidget {
                 fontSize: 15,
                 color: Colors.brown,
                 fontWeight: FontWeight.bold),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [Icon(Icons.article), Icon(Icons.favorite)],
           )
         ])
         // floatingActionButton: const FloatingActionButton(
