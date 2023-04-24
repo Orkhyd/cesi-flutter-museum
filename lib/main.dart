@@ -13,9 +13,15 @@ class MuseumApp extends StatelessWidget {
   }
 }
 
-class Artwork extends StatelessWidget {
+class Artwork extends StatefulWidget {
   const Artwork({super.key});
 
+  @override
+  State<Artwork> createState() => _ArtworkState();
+}
+
+class _ArtworkState extends State<Artwork> {
+  bool _isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,12 +54,17 @@ class Artwork extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [Icon(Icons.article), Icon(Icons.favorite)],
+            // children: const [Icon(Icons.article), Icon(Icons.favorite)],
+            children: [
+              const Icon(Icons.article),
+              IconButton(
+                  onPressed: () => setState(() {
+                        _isFavorite = true;
+                      }),
+                  icon: const Icon(Icons.article)),
+            ],
           )
-        ])
-        // floatingActionButton: const FloatingActionButton(
-        //     backgroundColor: Color.fromARGB(255, 255, 7, 7), onPressed: null)
-        );
+        ]));
   }
 }
 
