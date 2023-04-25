@@ -41,7 +41,7 @@ class _ArtworkState extends State<Artwork> {
 
           Center(
             child: SizedBox(
-                height: 650,
+                height: 610,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
